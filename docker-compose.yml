@@ -1,4 +1,4 @@
-version: '3.9'
+version: '3'
 
 services:
   db:
@@ -12,6 +12,8 @@ services:
       - 3306:3306
     volumes:
       - .docker/db/data:/var/opt/mysql/data
+    networks:
+      - db_network
     expose:
       - 3306
 
@@ -24,3 +26,10 @@ services:
       - 9229:9229
     volumes:
       - .:/usr/app
+    depends_on:
+      - db
+    networks:
+      - db_network
+
+networks:
+  db_network:
