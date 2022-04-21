@@ -10,6 +10,9 @@
       "name": "Attach to dev:debug",
       "protocol": "inspector",
       "restart": true,
+      "remoteRoot": "/usr/app",
+      "localRoot": "${workspaceFolder}",
+      "address": "0.0.0.0",
       "skipFiles": ["<node_internals>/**"]
     }
   ]

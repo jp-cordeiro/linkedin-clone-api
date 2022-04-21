@@ -21,6 +21,8 @@ services:
     container_name: api-linkedin-clone
     build: .
     entrypoint: .docker/entrypoint.sh
+    environment:
+      - DEBUG="*"
     ports:
       - 3000:3000
       - 9229:9229
